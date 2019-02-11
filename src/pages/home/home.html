@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+       Demo Embedded App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      Introduction To My App
+    </ion-card-header>
+    <ion-card-content>
+      This app is used to test remote monitoring and control using Ionic and Arduino. Use at your own risk.
+    </ion-card-content>
+
+
+  </ion-card>
+
+  <button (click)="goToMonitor()" ion-button icon-left outline full>
+    <ion-icon name="thermometer"></ion-icon>
+    Monitor
+  </button>
+
+  <button (click)="goToControl()" ion-button icon-right outline full>
+    <ion-icon name="game-controller-a"></ion-icon>
+       Control
+  </button>
+
+</ion-content>

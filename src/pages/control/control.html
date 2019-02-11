@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ControlPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Control</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      Digital Output (Switches)
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label> LED 1 ({{changeLabel()}}) </ion-label>
+          <ion-toggle (ionChange)="update()" [(ngModel)]="led1"  checked="false"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label> LED 2 ({{led2}})</ion-label>
+          <ion-toggle (ionChange)="update()" [(ngModel)]="led2" checked="false"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label> Motor 1 ({{motor1}})</ion-label>
+          <ion-toggle (ionChange)="update()" [(ngModel)]="motor1" checked="false"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label> Motor 2 ({{motor2}})</ion-label>
+          <ion-toggle  (ionChange)="update()" [(ngModel)]="motor2" checked="false"></ion-toggle>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Analog Output
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-label>Motor 3 Speed ({{motor3speed}})</ion-label>
+        <ion-range (ionChange)="update()" min="10" max="20" [(ngModel)]="motor3speed" >
+          <ion-icon  range-left small name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+      </div>
+      <div>
+        <ion-label>LED Intensity Level ({{led3intensity}})</ion-label>
+        <ion-range (ionChange)="update()" [(ngModel)]="led3intensity">
+          <ion-icon range-left small name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Digital Output (Momentary, Push Buttons)</ion-card-header>
+    <ion-card-content>
+      <button (click)="update()" ion-button icon-left>
+        <ion-icon name="home"></ion-icon>
+        Forward
+      </button>
+
+      <!-- Float the icon right -->
+      <button (click)="update()" ion-button icon-right>
+        Backward
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
